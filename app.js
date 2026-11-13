@@ -44,7 +44,12 @@ if(current==='project-detail.html'){
  body=hero('FROM THE FIELD',w.title,w.desc,w.img)+`<section class="split"><div>${eyebrow(w.type)}<h2>Understanding the site.<br>Planning what comes next.</h2><p>Site activity provides a closer look at the people, equipment and conditions behind construction. This image comes from the BVC fieldwork collection.</p><p>For project scope, location and relevant experience, speak directly with our team.</p>${button('Discuss your site')}<p><a class="outline-link" href="projects.html">← BACK TO OUR WORK</a></p></div><img src="${w.img}" alt="${w.title}"></section>`;
 }
 if(!body)body=hero('BVC CONSTRUCTION','Let’s build<br>what’s <em>next.</em>','Explore our sectors and get in touch.')+`<section>${button('Back to home','index.html')}</section>`;
-document.getElementById('app').innerHTML=header+'<main id="main-content">'+body+'</main>'+footer;
+// Use fixed-size vector arrows so mobile font fallback cannot alter their appearance.
+function renderArrows(markup){
+ const paths={'↗':'M5 19 19 5M5 5h14v14','↘':'M5 5l14 14M5 19h14V5','←':'M19 12H5m7-7-7 7 7 7','→':'M5 12h14m-7-7 7 7-7 7'};
+ return markup.replace(/[↗↘←→]/g,character=>`<svg class="ui-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="${paths[character]}"/></svg>`);
+}
+document.getElementById('app').innerHTML=renderArrows(header+'<main id="main-content">'+body+'</main>'+footer);
 const menu=document.querySelector('.menu');
 function closeMenu(){document.querySelector('nav').classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');menu.textContent='☰'}
 menu.addEventListener('click',()=>{const open=document.querySelector('nav').classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');menu.textContent=open?'×':'☰'});
