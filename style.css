@@ -14,3 +14,49 @@
 /* Vector arrows retain their size, stroke and alignment across mobile fonts. */
 .ui-arrow{display:inline-block;width:20px;height:20px;min-width:20px;flex:0 0 20px;vertical-align:middle;margin-inline-start:5px;overflow:visible;letter-spacing:normal;pointer-events:none}.button>span,.sector-link>b,.project-meta>b,.vision-jump-links b{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}.button .ui-arrow,.sector-link .ui-arrow,.project-meta .ui-arrow,.vision-jump-links .ui-arrow{margin:0}.sector-symbol .ui-arrow{width:30px;height:30px;min-width:30px;margin:0}.slide-controls button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}.slide-controls button .ui-arrow{margin:0;width:20px;height:20px}.text-link,.outline-link{line-height:1.7}.text-link .ui-arrow,.outline-link .ui-arrow,.journal-grid summary .ui-arrow{vertical-align:-4px}.utility .ui-arrow{width:15px;height:15px;min-width:15px}.vision-jump-links b{min-width:24px}.project-meta>b{min-width:24px;margin-left:12px}
 @media(max-width:700px){.ui-arrow{width:20px;height:20px;min-width:20px}.button{gap:20px}.slide-controls button{width:44px;height:44px;min-width:44px}.slide-controls{gap:8px}.sector-link>b,.project-meta>b,.vision-jump-links b{min-width:24px;min-height:24px}.sector-symbol .ui-arrow{width:30px;height:30px;min-width:30px}.utility .ui-arrow{width:15px;height:15px;min-width:15px}}
+
+.group-affiliation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-block: 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.group-affiliation > img,
+.split .group-affiliation > img {
+  display: block;
+  width: 64px;
+  height: auto;
+  aspect-ratio: 487 / 410;
+  flex: none;
+  border-radius: 4px;
+}
+.canopy-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 248px), 1fr));
+  gap: 16px;
+}
+.canopy-gallery a {
+  display: block;
+  background: #e8e6de;
+}
+.canopy-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.slide-controls #slide-playback {
+  width: auto;
+  padding-inline: 12px;
+  border-radius: 22px;
+  font-size: .875rem;
+}
+
+@media (max-width: 480px) {
+  .hero-bottom {
+    flex-wrap: wrap;
+  }
+}
